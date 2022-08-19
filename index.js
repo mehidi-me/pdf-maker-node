@@ -397,8 +397,8 @@ app.get("/", async (req, res) => {
 
   // async
   const pdf = await htmlPdf.create(html);
-  await pdf.toFile("test.pdf");
-  res.send("Hello World!");
+  const res = await pdf.toFile("test.pdf");
+  res.send("Hello World!" + res);
 });
 
 const port = process.env.PORT || 3000;
