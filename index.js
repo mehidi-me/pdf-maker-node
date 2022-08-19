@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+
 const htmlPdf = require("html-pdf-chrome");
 
 app.get("/", async (req, res) => {
@@ -401,6 +401,7 @@ app.get("/", async (req, res) => {
   res.send("Hello World!");
 });
 
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
